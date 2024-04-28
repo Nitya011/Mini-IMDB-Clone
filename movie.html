@@ -7,10 +7,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div id="movieDetails"></div>
-  </div>
+  <div id="movieDetails" class="container"></div>
 
-  <script src="script.js"></script>
+  <script src="favorites.js"></script>
+  <script src="movieDetails.js"></script>
+  <script>
+    // Extract IMDb ID from query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const imdbID = urlParams.get("id");
+
+    // Call fetchAndDisplayMovieDetails with IMDb ID
+    fetchAndDisplayMovieDetails(imdbID);
+  </script>
 </body>
 </html>
